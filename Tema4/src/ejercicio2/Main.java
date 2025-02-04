@@ -13,10 +13,6 @@ public class Main {
 		String nombre;
 		String apellidos;
 		int edad;
-		
-		// Creamos los objetos "persona1" y "persona2" de la clase Persona
-		
-		// Bucle para pedir los datos de ambas personas
 			
 			// Pedimos el dni y lo guardamos en "dni"
 			System.out.println("Introduzca el dni de la persona número 1");
