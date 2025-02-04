@@ -4,20 +4,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		// Creamos los objetos p1, p2 y p3, que son puntos, obtenidos de la clase Punto
-		Punto p1 = new Punto();
-		Punto p2 = new Punto();
-		Punto p3 = new Punto();
-
-		// Les damos valores a las coordenadas de los puntos
-		p1.coordenadaX = 5;
-		p1.coordenadaY = 0;
-		
-		p2.coordenadaX = 10;
-		p2.coordenadaY = 10;
-		
-		p3.coordenadaX = -3;
-		p3.coordenadaY = 7;
+		// Creamos los objetos p1, p2 y p3, que son puntos, obtenidos de la clase Punto, dandole las coordenadas con las que iniciars
+		Punto p1 = new Punto(5, 0);
+		Punto p2 = new Punto(10, 10);
+		Punto p3 = new Punto(-3, 7);
 		
 		// Mostramos las coordenadas de los 3 puntos
 		System.out.println("Coordenadas del punto 1: (" + p1.coordenadaX + ", " + p1.coordenadaY + ")" );
