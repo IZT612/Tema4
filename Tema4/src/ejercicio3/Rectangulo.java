@@ -6,11 +6,11 @@ package ejercicio3;
  */
 public class Rectangulo {
 
-	// Creamos los atributos de la clase Rectangulo, con todas las coordenadas
-	int x1;
-	int y1;
-	int x2;
-	int y2;
+	// Creamos los atributos de la clase Rectangulo, con todas las coordenadas (de default son 0)
+	int x1 = 0;
+	int y1 = 0;
+	int x2 = 0;
+	int y2 = 0;
 
 	/**
 	 * Funcion que obtiene las coordenadas y segun estas calcula los lados para
@@ -19,7 +19,28 @@ public class Rectangulo {
 	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
 	 * @return el perimetro del rectangulo
 	 */
-	public static int perimetro(Rectangulo rectangulo) {
+	Rectangulo(int x1, int y1, int x2, int y2) {
+		
+		// Si los datos son correctos los introducimos
+		if (!(x1 <= 0 || y1 <= 0 || x2 <= 0 || y2 <= 0)) {
+		
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+		
+		}
+		
+	}
+	
+	
+	/**
+	 * Funcion que calcula el perimetro de un rectangulo
+	 * 
+	 * @param rectangulo = el rectangulo del que se obtienen las coordenadas
+	 * @return el perimetro del rectangulo
+	 */
+	public int perimetro(Rectangulo rectangulo) {
 
 		// Variable donde guardaremos el perimetro
 		int perimetro = 0;
@@ -30,7 +51,7 @@ public class Rectangulo {
 		int xMenor;
 		int yMayor;
 		int yMenor;
-
+		
 		// Si la coordenada x1 es mayor a la x2
 		if (rectangulo.x1 > rectangulo.x2) {
 
@@ -72,7 +93,7 @@ public class Rectangulo {
 	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
 	 * @return el area del rectangulo
 	 */
-	public static int area(Rectangulo rectangulo) {
+	public int area(Rectangulo rectangulo) {
 
 		// Variable donde guardaremos el area
 		int area = 0;

@@ -1,34 +1,44 @@
 package ejercicio4;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		// Creamos un artículo
-		Articulo articulo1 = new Articulo();
+		// Creamos el scanner
+		Scanner sc = new Scanner(System.in);
 		
-		// Le guardamos un nombre y precio a este articul
-		articulo1.nombre = "Pijama";
-		articulo1.precio = 10;
+		// Variables donde guardaremos el nombre y precio del articulo
+		String nombre;
+		double precio;	
+		
+		// Pedimos los datos y los guardamos
+		System.out.println("Introduzca un nombre para el artículo");
+		nombre = sc.nextLine();
+		
+		System.out.println("Introduzca un precio para el artículo");
+		precio = sc.nextDouble();
+		
+		// Si hay algun dato incorrecto informamos al usuario
+		if (nombre.isEmpty() || precio <= 0) {
+			
+			System.out.println("Alguno de los datos introducidos es incorrecto");
+			System.out.println();
+		}
+		
+		// Creamos el objeto articulo dado el nombre y precio introducidos
+		Articulo articulo = new Articulo(nombre, precio);
 		
 		// Mostramos todos sus atributos
-		System.out.println("Nombre del artículo: " + articulo1.nombre);
-		System.out.println("Precio: " + articulo1.precio + "€");
-		System.out.println("IVA: " + articulo1.IVA + "%");
+		System.out.println("Nombre del artículo: " + articulo.nombre);
+		System.out.println("Precio: " + articulo.precio + "€");
+		System.out.println("IVA: " + articulo.IVA + "%");
 		// El PVP lo obtenemos llamando a la función "precioPublico" de la clase "Articulo" dando nuestro articulo
-		System.out.println("PVP: " + articulo1.precioPublico(articulo1));
+		System.out.println("PVP: " + articulo.precioPublico(articulo));
 		System.out.println();
-
-		// Cambiamos el precio del articulo
-		articulo1.precio = 98;
 		
-		// Volvemos a cambiar el
-		System.out.println("Nombre del artículo: " + articulo1.nombre);
-		System.out.println("Precio: " + articulo1.precio + "€");
-		System.out.println("IVA: " + articulo1.IVA + "%");
-		System.out.println("PVP: " + articulo1.precioPublico(articulo1));
-		
-		
+		sc.close();
 	}
 
 }

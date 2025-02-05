@@ -10,16 +10,40 @@ public class Articulo {
 	// Creamos todos los atributos del articulo:
 	
 	// Variable String donde guardamos el nombre
-	String nombre;
+	String nombre = "Default Name";
 	
 	// Variable double donde guardamos el precio
-	double precio;
+	double precio = 0;
 	
 	// Constante double donde guardamos el IVA
 	final double IVA = 21;
 	
 	// Variable entera donde guardamos cuantos articulos quedan en el almacen
 	int cuantosQuedan;
+	
+	/**
+	 * Constructor que verifica si los datos son correctos para introducirlos o no
+	 * 
+	 * @param nombre = nombre del articulo
+	 * @param precio = precio del articulo
+	 */
+	Articulo(String nombre, double precio) {
+		
+		// Verifico si no está vacío para guardar el nombre introducido por parámetro
+		if (!nombre.isEmpty()) {
+			
+			this.nombre = nombre;
+			
+		}
+		
+		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
+		if (precio > 0) {
+			
+			this.precio = precio;
+			
+		}
+		
+	}
 
 	/**
 	 * Función que obtiene un articulo como parametro y mediante su precio e IVA calcula el PVP y lo devuelve
