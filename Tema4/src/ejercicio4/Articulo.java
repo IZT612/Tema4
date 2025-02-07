@@ -10,16 +10,58 @@ public class Articulo {
 	// Creamos todos los atributos del articulo:
 	
 	// Variable String donde guardamos el nombre
-	String nombre = "Default Name";
+	private String nombre = "Default Name";
 	
 	// Variable double donde guardamos el precio
-	double precio = 0;
+	private double precio = 0;
 	
 	// Constante double donde guardamos el IVA
-	final double IVA = 21;
+	private final double IVA = 21;
 	
 	// Variable entera donde guardamos cuantos articulos quedan en el almacen
-	int cuantosQuedan;
+	private int cuantosQuedan;
+	
+	public String getNombre() {
+		
+		return nombre;
+		
+	}
+	
+	public double getPrecio() {
+		
+		return precio;
+		
+	}
+	
+	public double getIVA() {
+		
+		return IVA;
+		
+	}
+	
+	public int getCuantosQuedan() {
+		
+		return cuantosQuedan;
+		
+	}
+	
+	public void setNombre(String nombre) {
+		
+		this.nombre = nombre;
+		
+	}
+	
+	public void setPrecio(double precio) {
+		
+		this.precio = precio;
+		
+	}
+	
+	public void setCuantosQuedan(int cuantosQuedan) {
+		
+		this.cuantosQuedan = cuantosQuedan;
+		
+	}
 	
 	/**
 	 * Constructor que verifica si los datos son correctos para introducirlos o no

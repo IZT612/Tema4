@@ -6,10 +6,61 @@ package ejercicio2;
 public class Persona {
 
 	
-	String dni;
-	String nombre;
-	String apellidos;
-	int edad;
+	private String dni = "Vacío";
+	private String nombre = "Vacío";
+	private String apellidos = "Vacío";
+	private int edad = 0;
+	
+	public String getDni() {
+		
+		return dni;
+		
+	}
+	
+	public String getNombre() {
+		
+		return nombre;
+		
+	}
+	
+	public String getApellidos() {
+		
+		return apellidos;
+		
+	}
+	
+	public int getEdad() {
+		
+		return edad;
+		
+	}
+	
+	public void setDni(String dniM) {
+		
+		this.dni = dniM;
+		
+	}
+	
+	public void setNombre(String nombreM) {
+		
+		this.nombre = nombreM;
+		
+	}
+	
+	public void setApellidos(String apellidosM) {
+		
+		this.apellidos = apellidosM;
+		
+	}
+	
+	public void setEdad(int edadM) {
+		
+		this.edad = edadM;
+		
+	}
+	
+	
+	
 	
 	/**
 	 * Constructor que segun los parametros obtenidos crea un objeto con los atributos especificados
@@ -27,5 +78,7 @@ public class Persona {
 		this.edad = edad;
 		
 	}
+	
+	
 
 }

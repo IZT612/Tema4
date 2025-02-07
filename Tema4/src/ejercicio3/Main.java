@@ -46,6 +46,16 @@ public class Main {
 		System.out.println("El área del rectangulo es: " + rectangulo.area(rectangulo));
 		System.out.println();	
 		
+		System.out.println("Recordemos las coordenadas del rectangulo:");
+		System.out.println("x1: " + rectangulo.getX1() + "\n y1: " + rectangulo.getY1()  + "\n x2: " + rectangulo.getX2() + "\n y2: " + rectangulo.getY2());
+		System.out.println();
+		System.out.println("Probemos a cambiar ahora la coordenada x1:");
+		x1 = sc.nextInt();
+		rectangulo.setX1(x1);
+		
+		System.out.println("Nuevas coordenadas:");
+		System.out.println("x1: " + rectangulo.getX1() + "\n y1: " + rectangulo.getY1()  + "\n x2: " + rectangulo.getX2() + "\n y2: " + rectangulo.getY2());
+		
 		// Cerramos el scanner
 		sc.close();
 	}

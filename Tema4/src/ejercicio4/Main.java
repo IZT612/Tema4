@@ -19,6 +19,7 @@ public class Main {
 		
 		System.out.println("Introduzca un precio para el artículo");
 		precio = sc.nextDouble();
+		sc.nextLine();
 		
 		// Si hay algun dato incorrecto informamos al usuario
 		if (nombre.isEmpty() || precio <= 0) {
@@ -31,12 +32,19 @@ public class Main {
 		Articulo articulo = new Articulo(nombre, precio);
 		
 		// Mostramos todos sus atributos
-		System.out.println("Nombre del artículo: " + articulo.nombre);
-		System.out.println("Precio: " + articulo.precio + "€");
-		System.out.println("IVA: " + articulo.IVA + "%");
+		System.out.println("Nombre del artículo: " + articulo.getNombre());
+		System.out.println("Precio: " + articulo.getPrecio() + "€");
+		System.out.println("IVA: " + articulo.getIVA() + "%");
 		// El PVP lo obtenemos llamando a la función "precioPublico" de la clase "Articulo" dando nuestro articulo
 		System.out.println("PVP: " + articulo.precioPublico(articulo));
 		System.out.println();
+		
+		System.out.println("Probemos ahora a cambiar el nombre del artículo:");
+		nombre = sc.nextLine();
+		
+		articulo.setNombre(nombre);
+		System.out.println("Nombre del artículo: " + articulo.getNombre());
+		
 		
 		sc.close();
 	}
