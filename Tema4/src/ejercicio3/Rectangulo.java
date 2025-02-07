@@ -12,6 +12,27 @@ public class Rectangulo {
 	private int x2 = 0;
 	private int y2 = 0;
 	
+	/**
+	 * Funcion que obtiene las coordenadas y segun estas calcula los lados para
+	 * calcular el perimetro
+	 * 
+	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
+	 * @return el perimetro del rectangulo
+	 */
+	Rectangulo(int x1, int y1, int x2, int y2) {
+		
+		// Si los datos son correctos los introducimos
+		if (!(x1 <= 0 || y1 <= 0 || x2 <= 0 || y2 <= 0)) {
+		
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+		
+		}
+		
+	}
+	
 	public int getX1() {
 		
 		return x1;
@@ -59,28 +80,6 @@ public class Rectangulo {
 		this.y2 = y2;
 		
 	}
-
-	/**
-	 * Funcion que obtiene las coordenadas y segun estas calcula los lados para
-	 * calcular el perimetro
-	 * 
-	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
-	 * @return el perimetro del rectangulo
-	 */
-	Rectangulo(int x1, int y1, int x2, int y2) {
-		
-		// Si los datos son correctos los introducimos
-		if (!(x1 <= 0 || y1 <= 0 || x2 <= 0 || y2 <= 0)) {
-		
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		
-		}
-		
-	}
-	
 	
 	/**
 	 * Funcion que calcula el perimetro de un rectangulo
@@ -88,7 +87,7 @@ public class Rectangulo {
 	 * @param rectangulo = el rectangulo del que se obtienen las coordenadas
 	 * @return el perimetro del rectangulo
 	 */
-	public int perimetro(Rectangulo rectangulo) {
+	public int getPerimetro(Rectangulo rectangulo) {
 
 		// Variable donde guardaremos el perimetro
 		int perimetro = 0;
@@ -141,7 +140,7 @@ public class Rectangulo {
 	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
 	 * @return el area del rectangulo
 	 */
-	public int area(Rectangulo rectangulo) {
+	public int getArea(Rectangulo rectangulo) {
 
 		// Variable donde guardaremos el area
 		int area = 0;
@@ -183,4 +182,37 @@ public class Rectangulo {
 		// Devolvemos el area
 		return area;
 	}
+	
+	public void setX1Y1(int x1, int y1) {
+		
+		this.x1 = x1;
+		this.y1 = y1;
+		
+	}
+	
+	public void setX2Y2(int x2, int y2) {
+		
+		this.x2 = x2;
+		this.y2 = y2;
+		
+	}
+	
+	public void setAll(int x1, int y1, int x2, int y2) {
+		
+		this.x1 = x1;
+		this.x2 = x2;
+		this.y1 = y1;
+		this.y2 = y2;
+		
+	}
+	
+	public String toString() {
+		
+		String informacion = "";
+		
+		System.out.println("X1: " + this.x1 + "\nY1: " + this.y1 + "\nX2: " + this.x2 + "\nY2" + this.y2);
+		
+		return informacion;
+	}
+	
 }

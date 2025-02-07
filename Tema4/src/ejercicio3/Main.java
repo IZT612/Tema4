@@ -42,8 +42,8 @@ public class Main {
 		Rectangulo rectangulo = new Rectangulo(x1, y1, x2, y2);
 		
 		// Mostramos el perimetro y area de cada uno, llamando a las funciones dandoles como perímetro el rectangulo que corresponde
-		System.out.println("El perímetro del rectangulo es: " + rectangulo.perimetro(rectangulo));
-		System.out.println("El área del rectangulo es: " + rectangulo.area(rectangulo));
+		System.out.println("El perímetro del rectangulo es: " + rectangulo.getPerimetro(rectangulo));
+		System.out.println("El área del rectangulo es: " + rectangulo.getArea(rectangulo));
 		System.out.println();	
 		
 		System.out.println("Recordemos las coordenadas del rectangulo:");

@@ -1,6 +1,5 @@
 	package ejercicio2;
 	
-	import java.nio.channels.AsynchronousSocketChannel;
 	import java.util.Scanner;
 	
 	public class Main {
@@ -60,16 +59,23 @@
 				Persona persona2 = new Persona(dni, nombre, apellidos, edad);
 			
 			// Mostramos los datos de la persona 1
-			System.out.print(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni());
+			System.out.print(persona1.toString());
 			// Operador ternario para poner añadir "no" si no es mayor de edad
-			System.out.print(persona1.getEdad()>= 18 ? " " : " no ");
-			System.out.println("es mayor de edad.");
+			System.out.print(persona1.esMayorEdad() ? "E" : "No e");
+			System.out.println("s mayor de edad.");
+			System.out.print(persona1.esJubilado() ? "E" : "No e");
+			System.out.println("stá jubilado");
+			System.out.println();
 	
 			// Mostramos los datos de la persona 2
-			System.out.print(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni());
+			System.out.print(persona2.toString());
 			// Operador ternario para poner añadir "no" si no es mayor de edad
-			System.out.print(persona2.getEdad()>= 18 ? " " : " no ");
-			System.out.println("es mayor de edad.");
+			System.out.print(persona2.esMayorEdad() ? "E" : "No e");
+			System.out.println("s mayor de edad.");
+			System.out.print(persona2.esJubilado() ? "E" : "No e");
+			System.out.println("stá jubilado");
+			System.out.println();
+			System.out.println("La diferencia de edad entre la persona 1 y persona 2 es de: " + persona1.diferenciaEdad(persona2));
 			
 			System.out.println();
 			System.out.println("Probemos ahora a cambiar el nombre de la persona 1");
@@ -78,7 +84,7 @@
 			
 			persona1.setNombre(nombre);
 			// Mostramos los datos de la persona 1
-			System.out.print(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni());
+			System.out.print(persona1.toString());
 			
 			// Cerramos el scanner
 			sc.close();
