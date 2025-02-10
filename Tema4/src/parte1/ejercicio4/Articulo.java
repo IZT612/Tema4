@@ -1,4 +1,4 @@
-package ejercicio4;
+package parte1.ejercicio4;
 
 /**
  * Clase que contiene atributos como nombre, precio, iva y cantidad restante en

@@ -1,4 +1,4 @@
-package ejercicio3;
+package parte1.ejercicio3;
 
 /**
  * Clase que contiene atributos como las coordenadas de los rectangulos, también contiene funciones para calcular el perimetro y

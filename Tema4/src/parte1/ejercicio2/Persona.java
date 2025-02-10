@@ -1,4 +1,4 @@
-package ejercicio2;
+package parte1.ejercicio2;
 
 /**
  * Clase persona con atributos dni, nombre, apellidos y edad

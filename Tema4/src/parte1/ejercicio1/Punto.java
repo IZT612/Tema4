@@ -1,4 +1,4 @@
-package ejercicio1;
+package parte1.ejercicio1;
 
 /**
  * Clase Punto que guarda funciones para operar con puntos y los atributos de los propios puntos
