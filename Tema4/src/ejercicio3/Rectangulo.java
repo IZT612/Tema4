@@ -87,7 +87,7 @@ public class Rectangulo {
 	 * @param rectangulo = el rectangulo del que se obtienen las coordenadas
 	 * @return el perimetro del rectangulo
 	 */
-	public int getPerimetro(Rectangulo rectangulo) {
+	public int getPerimetro() {
 
 		// Variable donde guardaremos el perimetro
 		int perimetro = 0;
@@ -100,29 +100,29 @@ public class Rectangulo {
 		int yMenor;
 		
 		// Si la coordenada x1 es mayor a la x2
-		if (rectangulo.x1 > rectangulo.x2) {
+		if (this.x1 > this.x2) {
 
 			// "xMayor" será x1, y "xMenor" será x2
-			xMayor = rectangulo.x1;
-			xMenor = rectangulo.x2;
+			xMayor = this.x1;
+			xMenor = this.x2;
 
 			// Si no, al contrario
 		} else {
 
-			xMayor = rectangulo.x2;
-			xMenor = rectangulo.x1;
+			xMayor = this.x2;
+			xMenor = this.x1;
 		}
 
 		// Hacemos lo mismo con la coordenada y
-		if (rectangulo.y1 > rectangulo.y2) {
+		if (this.y1 > this.y2) {
 
-			yMayor = rectangulo.y1;
-			yMenor = rectangulo.y2;
+			yMayor = this.y1;
+			yMenor = this.y2;
 
 		} else {
 
-			yMayor = rectangulo.y2;
-			yMenor = rectangulo.y1;
+			yMayor = this.y2;
+			yMenor = this.y1;
 		}
 
 		// Calculamos el perimetro
@@ -140,7 +140,7 @@ public class Rectangulo {
 	 * @param rectangulo = rectangulo del que luego obtiene las coordenadas
 	 * @return el area del rectangulo
 	 */
-	public int getArea(Rectangulo rectangulo) {
+	public int getArea() {
 
 		// Variable donde guardaremos el area
 		int area = 0;
@@ -154,26 +154,26 @@ public class Rectangulo {
 
 		// Mismo if que en la funcion "perimetro", en resumen sirve para guardar en
 		// xMayor, xMenor, yMayor, yMenor donde corresponden
-		if (rectangulo.x1 > rectangulo.x2) {
+		if (this.x1 > this.x2) {
 
-			xMayor = rectangulo.x1;
-			xMenor = rectangulo.x2;
+			xMayor = this.x1;
+			xMenor = this.x2;
 
 		} else {
 
-			xMayor = rectangulo.x2;
-			xMenor = rectangulo.x1;
+			xMayor = this.x2;
+			xMenor = this.x1;
 		}
 
-		if (rectangulo.y1 > rectangulo.y2) {
+		if (this.y1 > this.y2) {
 
-			yMayor = rectangulo.y1;
-			yMenor = rectangulo.y2;
+			yMayor = this.y1;
+			yMenor = this.y2;
 
 		} else {
 
-			yMayor = rectangulo.y2;
-			yMenor = rectangulo.y1;
+			yMayor = this.y2;
+			yMenor = this.y1;
 		}
 
 		// Calculamos el area
@@ -210,7 +210,7 @@ public class Rectangulo {
 		
 		String informacion = "";
 		
-		System.out.println("X1: " + this.x1 + "\nY1: " + this.y1 + "\nX2: " + this.x2 + "\nY2" + this.y2);
+		System.out.println("X1: " + this.x1 + "\nY1: " + this.y1 + "\nX2: " + this.x2 + "\nY2: " + this.y2);
 		
 		return informacion;
 	}

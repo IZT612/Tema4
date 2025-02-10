@@ -42,19 +42,42 @@ public class Main {
 		Rectangulo rectangulo = new Rectangulo(x1, y1, x2, y2);
 		
 		// Mostramos el perimetro y area de cada uno, llamando a las funciones dandoles como perímetro el rectangulo que corresponde
-		System.out.println("El perímetro del rectangulo es: " + rectangulo.getPerimetro(rectangulo));
-		System.out.println("El área del rectangulo es: " + rectangulo.getArea(rectangulo));
+		System.out.println("El perímetro del rectangulo es: " + rectangulo.getPerimetro());
+		System.out.println("El área del rectangulo es: " + rectangulo.getArea());
 		System.out.println();	
 		
 		System.out.println("Recordemos las coordenadas del rectangulo:");
-		System.out.println("x1: " + rectangulo.getX1() + "\n y1: " + rectangulo.getY1()  + "\n x2: " + rectangulo.getX2() + "\n y2: " + rectangulo.getY2());
+		System.out.println(rectangulo.toString());
 		System.out.println();
 		System.out.println("Probemos a cambiar ahora la coordenada x1:");
 		x1 = sc.nextInt();
+		sc.nextLine();
 		rectangulo.setX1(x1);
 		
 		System.out.println("Nuevas coordenadas:");
-		System.out.println("x1: " + rectangulo.getX1() + "\n y1: " + rectangulo.getY1()  + "\n x2: " + rectangulo.getX2() + "\n y2: " + rectangulo.getY2());
+		System.out.println(rectangulo.toString());
+		System.out.println();
+		System.out.println("Probemos a cambiar las 2 primeras coordenadas en un solo método:");
+		x1 = sc.nextInt();
+		sc.nextLine();
+		y1 = sc.nextInt();
+		sc.nextLine();
+		rectangulo.setX1Y1(x1, y1);
+		System.out.println("Nuevas coordenadas:");
+		System.out.println(rectangulo.toString());
+		System.out.println();
+		System.out.println("Por último cambiemos todas a la vez");
+		x1 = sc.nextInt();
+		sc.nextLine();
+		y1 = sc.nextInt();
+		sc.nextLine();		
+		x2 = sc.nextInt();
+		sc.nextLine();
+		y2 = sc.nextInt();
+		sc.nextLine();
+		rectangulo.setAll(x1, y1, x2, y2);
+		System.out.println("Nuevas coordenadas:");
+		System.out.println(rectangulo.toString());
 		
 		// Cerramos el scanner
 		sc.close();

@@ -21,6 +21,30 @@ public class Articulo {
 	// Variable entera donde guardamos cuantos articulos quedan en el almacen
 	private int cuantosQuedan;
 	
+	/**
+	 * Constructor que verifica si los datos son correctos para introducirlos o no
+	 * 
+	 * @param nombre = nombre del articulo
+	 * @param precio = precio del articulo
+	 */
+	Articulo(String nombre, double precio) {
+		
+		// Verifico si no está vacío para guardar el nombre introducido por parámetro
+		if (!nombre.isEmpty()) {
+			
+			this.nombre = nombre;
+			
+		}
+		
+		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
+		if (precio > 0) {
+			
+			this.precio = precio;
+			
+		}
+		
+	}
+	
 	public String getNombre() {
 		
 		return nombre;
@@ -63,29 +87,7 @@ public class Articulo {
 		
 	}
 	
-	/**
-	 * Constructor que verifica si los datos son correctos para introducirlos o no
-	 * 
-	 * @param nombre = nombre del articulo
-	 * @param precio = precio del articulo
-	 */
-	Articulo(String nombre, double precio) {
-		
-		// Verifico si no está vacío para guardar el nombre introducido por parámetro
-		if (!nombre.isEmpty()) {
-			
-			this.nombre = nombre;
-			
-		}
-		
-		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
-		if (precio > 0) {
-			
-			this.precio = precio;
-			
-		}
-		
-	}
+
 
 	/**
 	 * Función que obtiene un articulo como parametro y mediante su precio e IVA calcula el PVP y lo devuelve
@@ -93,13 +95,54 @@ public class Articulo {
 	 * @param articulo = el articulo del que se obtiene el precio e IVA para calcular el PVP
 	 * @return devuelve el PVP
 	 */
-	public double precioPublico(Articulo articulo) {
+	public double getPVP() {
 
 		double PVP = 0;
 
-		PVP = articulo.precio + ((articulo.IVA / 100) * articulo.precio);
+		PVP = this.precio + ((this.IVA / 100) * this.precio);
 
 		return PVP;
+	}
+	
+	public double getPVPDescuento(int descuento) {
+		
+		double PVP = 0;
+		
+		PVP = this.getPVP() - (this.getPVP() * (descuento / 100));
+		
+		return PVP;
+	}
+	
+	public boolean vender(int cantidad) {
+		
+		boolean posible;
+		
+		if (cantidad <= this.cuantosQuedan) {
+			
+			posible = true;
+			
+		} else {
+			
+			posible = false;
+			
+		}
+		
+		return posible;
+	}
+	
+	public void almacenar(int cantidad) {
+		
+		this.cuantosQuedan += cantidad;
+		
+	}
+	
+	public String toString() {
+		
+		String informacion;
+		
+		informacion = ("Nombre: " + nombre + "\nPrecio: " + precio + "\nIVA: " + IVA + "\nRestantes: " + cuantosQuedan);
+		
+		return informacion;
 	}
 
 }

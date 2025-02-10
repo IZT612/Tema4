@@ -12,6 +12,8 @@ public class Main {
 		// Variables donde guardaremos el nombre y precio del articulo
 		String nombre;
 		double precio;	
+		int descuento;
+		int cantidad;
 		
 		// Pedimos los datos y los guardamos
 		System.out.println("Introduzca un nombre para el artículo");
@@ -32,11 +34,9 @@ public class Main {
 		Articulo articulo = new Articulo(nombre, precio);
 		
 		// Mostramos todos sus atributos
-		System.out.println("Nombre del artículo: " + articulo.getNombre());
-		System.out.println("Precio: " + articulo.getPrecio() + "€");
-		System.out.println("IVA: " + articulo.getIVA() + "%");
+		System.out.println(articulo.toString());
 		// El PVP lo obtenemos llamando a la función "precioPublico" de la clase "Articulo" dando nuestro articulo
-		System.out.println("PVP: " + articulo.precioPublico(articulo));
+		System.out.println("PVP: " + articulo.getPVP());
 		System.out.println();
 		
 		System.out.println("Probemos ahora a cambiar el nombre del artículo:");
@@ -44,6 +44,22 @@ public class Main {
 		
 		articulo.setNombre(nombre);
 		System.out.println("Nombre del artículo: " + articulo.getNombre());
+		System.out.println();
+		System.out.println("Introduzca el porcentaje de un descuento para obtener el nuevo precio del articulo");
+		descuento = sc.nextInt();
+		sc.nextLine();
+		System.out.println(articulo.getPVPDescuento(descuento));
+		
+		System.out.println("¿Cuánta cantidad del artículo intenta vender?");
+		cantidad =  sc.nextInt();
+		sc.nextLine();
+		System.out.println(articulo.vender(cantidad));
+		System.out.println();
+		System.out.println("¿Y cuánto intenta almacenar?");
+		cantidad =  sc.nextInt();
+		sc.nextLine();
+		articulo.almacenar(cantidad);
+		System.out.println();
 		
 		
 		sc.close();
