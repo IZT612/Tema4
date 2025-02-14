@@ -363,6 +363,7 @@ public class Libro {
 		if (cantidad > 0 && cantidad <= this.prestados) {
 
 			this.prestados -= cantidad;
+			devueltos = true;
 
 		}
 
@@ -393,15 +394,15 @@ public class Libro {
 	 */
 	public boolean equals(Libro libro) {
 
-		boolean iguales = false;
+		boolean sonIguales = false;
 
 		if (this.titulo.equals(libro.titulo) && this.autor.equals(libro.autor)) {
 
-			iguales = true;
+			sonIguales = true;
 
 		}
 
-		return iguales = false;
+		return sonIguales;
 	}
 
 }
