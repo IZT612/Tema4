@@ -40,6 +40,35 @@ public class Articulo {
 		
 	}
 	
+	Articulo(String nombre) {
+		
+		// Verifico si no está vacío para guardar el nombre introducido por parámetro
+		if (!nombre.isEmpty()) {
+			
+			this.nombre = nombre;
+			
+		}
+		
+	}
+	
+	Articulo(String nombre, int cantidad) {
+		
+		// Verifico si no está vacío para guardar el nombre introducido por parámetro
+		if (!nombre.isEmpty()) {
+			
+			this.nombre = nombre;
+			
+		}
+		
+		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
+		if (cantidad > 0) {
+			
+			this.cantidad = cantidad;
+			
+		}
+		
+	}
+	
 	public String getNombre() {
 		
 		return nombre;
