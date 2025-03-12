@@ -7,68 +7,64 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-
-		String nombre;
-		double nota;
+		
+		Hora horita;
+		
+		int hora;
+		int minuto;
+		int segundo;
+		int veces;
 		int opcion;
 		
-		do  {
+		System.out.println("Introduzca la hora:");
+		hora = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduzca el minuto:");
+		minuto = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduzca el segundo:");
+		segundo = sc.nextInt();
+		sc.nextLine();
+		horita = new Hora(hora, minuto, segundo);
+		
+		do {
 			
-			System.out.println("Introduzca una opción:");
-			System.out.println("1. Mostrar listado.");
-			System.out.println("2. Crear nuevo alumno.");
-			System.out.println("3. Modificar nota de un alumno.");
-			System.out.println("4. Borrar alumno.");
-			System.out.println("5. Salir");
+			System.out.println("Introduzca una opción.");
+			System.out.println("1. Mostrar la hora.");
+			System.out.println("2. Incrementar la hora.");
+			System.out.println("3. Salir del programa.");
 			opcion = sc.nextInt();
 			sc.nextLine();
 			System.out.println();
 			
 			switch (opcion) {
 			
-				case 1 -> {
-					
-					AlumnoCRUD.listado();
-					
-				}
+			case 1 -> {
 				
-				case 2 -> {
-					
-					System.out.println("Introduzca el nombre del alumno");
-					nombre = sc.nextLine();
-					System.out.println("Ahora su nota");
-					nota = sc.nextDouble();
-					sc.nextLine();
-					AlumnoCRUD.crearAlumno(nombre, nota);
-					
-				}
+				System.out.println(horita);
 				
-				case 3 -> {
-					
-					System.out.println("Introduzca el nombre del alumno");
-					nombre = sc.nextLine();
-					System.out.println("Ahora su nueva nota");
-					nota = sc.nextDouble();
-					sc.nextLine();
-					AlumnoCRUD.modificar(nombre, nota);
-					
-				}
+			}
+			
+			case 2 -> {
 				
-				case 4 -> {
+				System.out.println("¿Cuántos segundos quiere incrementar?");
+				veces = sc.nextInt();
+				sc.nextLine();
+				
+				for(int i = 0; i < veces; i++) {
 					
-					System.out.println("Introduzca el nombre del alumno");
-					nombre = sc.nextLine();
-					AlumnoCRUD.borrar(nombre);
+					horita.incrementarSegundo();
 					
 				}
+			}
 			
 			}
 			
 			System.out.println();
 			
-		} while (opcion != 5);
+		} while (opcion != 3);
 		
-		System.out.println("Saliendo del programa");
+		System.out.println("Saliendo del programa.");
 		
 		sc.close();
 		

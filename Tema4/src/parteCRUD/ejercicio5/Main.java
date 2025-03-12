@@ -1,4 +1,4 @@
-package parte4.ejercicio5;
+package parteCRUD.ejercicio5;
 
 import java.util.Scanner;
 

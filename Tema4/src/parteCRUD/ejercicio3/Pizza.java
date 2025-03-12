@@ -1,4 +1,4 @@
-package parte4.ejercicio3;
+package parteCRUD.ejercicio3;
 
 public class Pizza {
 

@@ -1,4 +1,4 @@
-package parte4.ejercicio2;
+package parteCRUD.ejercicio2;
 
 import java.util.HashSet;
 import java.util.Set;

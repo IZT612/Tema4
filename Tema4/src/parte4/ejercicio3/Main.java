@@ -5,74 +5,90 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		
-		Pizza pizza = null;
+		Fecha fecha;
 		
-		int codigo;
-		String tamaño;
-		String tipo;
+		int dia;
+		int mes;
+		int año;
 		int opcion;
+		
+		System.out.println("Introduzca el día.");
+		dia = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduzca el mes.");
+		mes = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduzca el año.");
+		año = sc.nextInt();
+		sc.nextLine();
+		
+		fecha = new Fecha(dia, mes, año);
 		
 		do {
 			
-			System.out.println("Introduzca una opción:");
-			System.out.println("1. Listado de pizzas");
-			System.out.println("2. Nuevo pedido");
-			System.out.println("3. Pizza servida");
-			System.out.println("4. Salir");
+			System.out.println("Introduzca una opción.");
+			System.out.println("1. Ver fecha.");
+			System.out.println("2. Ver si el año es bisiesto.");
+			System.out.println("3. Comprobar fecha.");
+			System.out.println("4. Próximo día.");
+			System.out.println("5. Salir del programa.");
 			opcion = sc.nextInt();
 			sc.nextLine();
 			System.out.println();
 			
 			switch (opcion) {
 			
-				case 1 -> {
-					
-					PizzaCRUD.listado();
-					
-				}
+			case 1 -> {
 				
-				case 2 -> {
-					
-					System.out.println("Introduzca el código de la pizza");
-					codigo = sc.nextInt();
-					sc.nextLine();
-					System.out.println("Introduzca el tamaño de la pizza");
-					tamaño = sc.nextLine();
-					System.out.println("Y ahora el tipo");
-					tipo = sc.nextLine();
-					pizza = new Pizza(codigo, tamaño, tipo);
-					PizzaCRUD.nuevoPedido(pizza);
-					
-				}
+				System.out.println(fecha);
 				
-				case 3 -> {
+			}
+			
+			case 2 -> {
+				
+				if (fecha.esBisiesto()) {
 					
-					System.out.println("Introduzca el código de la pizza");
-					codigo = sc.nextInt();
-					sc.nextLine();
-					pizza = new Pizza(codigo, null, null);
-					if(PizzaCRUD.pizzaServida(pizza)) {
-						
-						System.out.println("Pizza servida con exito");
-						
-					} else {
-						
-						System.out.println("Ha ocurrido algún error");
-						
-					}
+					System.out.println("El año es bisiesto.");
+					
+				} else {
+					
+					System.out.println("El año no es bisiesto.");
 					
 				}
 				
 			}
 			
-			System.out.println();
+			case 3 -> {
+				
+				if (fecha.fechaCorrecta()) {
+					
+					System.out.println("La fecha es correcta.");
+					
+				} else {
+					
+					System.out.println("La fecha es incorrecta.");
+					
+				}
+				
+			}
 			
-		} while (opcion != 4);
-		
-		System.out.println("Saliendo del programa");
+			case 4 -> {
+				
+				fecha.diaSiguiente();
+				
+			}
+			
+			}
+			
+			System.out.println();
+ 			
+		} while (opcion != 5);
 
+		sc.close();
+		
 	}
 
 }
