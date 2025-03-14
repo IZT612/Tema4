@@ -1,144 +1,109 @@
 package parteCRUD.ejercicio2;
 
+/**
+ * Clase que representa un artículo en el sistema. Contiene información sobre su
+ * nombre, precio, cantidad en almacén y el IVA aplicable.
+ * 
+ * @author Iván
+ */
 public class Articulo {
 
-	// Creamos todos los atributos del articulo:
-	
-	// Variable String donde guardamos el nombre
-	private String nombre;
-	
-	// Variable double donde guardamos el precio
-	private double precio = 0;
-	
-	// Constante double donde guardamos el IVA
-	private final double IVA = 21;
-	
-	// Variable entera donde guardamos cuantos articulos quedan en el almacen
-	private int cantidad;
-	
+	private String nombre; // Nombre del artículo
+	private double precio = 0; // Precio del artículo
+	private final double IVA = 21; // IVA aplicado
+	private int cantidad; // Cantidad en almacén
+
 	/**
-	 * Constructor que verifica si los datos son correctos para introducirlos o no
+	 * Constructor para crear un artículo con nombre y precio.
 	 * 
-	 * @param nombre = nombre del articulo
-	 * @param precio = precio del articulo
+	 * @param nombre Nombre del artículo.
+	 * @param precio Precio del artículo.
 	 */
-	Articulo(String nombre, double precio) {
-		
-		// Verifico si no está vacío para guardar el nombre introducido por parámetro
+	public Articulo(String nombre, double precio) {
 		if (!nombre.isEmpty()) {
-			
 			this.nombre = nombre;
-			
 		}
-		
-		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
 		if (precio > 0) {
-			
 			this.precio = precio;
-			
 		}
-		
 	}
-	
-	Articulo(String nombre) {
-		
-		// Verifico si no está vacío para guardar el nombre introducido por parámetro
-		if (!nombre.isEmpty()) {
-			
-			this.nombre = nombre;
-			
-		}
-		
-	}
-	
-	Articulo(String nombre, int cantidad) {
-		
-		// Verifico si no está vacío para guardar el nombre introducido por parámetro
-		if (!nombre.isEmpty()) {
-			
-			this.nombre = nombre;
-			
-		}
-		
-		// Verifico si el precio es mayor a 0 para guardar el precio introducido por parámetro
-		if (cantidad > 0) {
-			
-			this.cantidad = cantidad;
-			
-		}
-		
-	}
-	
-	public String getNombre() {
-		
-		return nombre;
-		
-	}
-	
-	public double getPrecio() {
-		
-		return precio;
-		
-	}
-	
-	public double getIVA() {
-		
-		return IVA;
-		
-	}
-	
-	public int getCantidad() {
-		
-		return cantidad;
-		
-	}
-	
-	public void setNombre(String nombre) {
-		
-		this.nombre = nombre;
-		
-	}
-	
-	public void setPrecio(double precio) {
-		
-		this.precio = precio;
-		
-	}
-	
-	public void setCantidad(int cantidad) {
-		
-		this.cantidad = cantidad;
-		
-	}
-	
+
 	/**
-	 * Función que obtiene un articulo como parametro y mediante su precio e IVA calcula el PVP y lo devuelve
+	 * Constructor para crear un artículo con solo el nombre.
 	 * 
-	 * @param articulo = el articulo del que se obtiene el precio e IVA para calcular el PVP
-	 * @return devuelve el PVP
+	 * @param nombre Nombre del artículo.
+	 */
+	public Articulo(String nombre) {
+		if (!nombre.isEmpty()) {
+			this.nombre = nombre;
+		}
+	}
+
+	/**
+	 * Constructor para crear un artículo con nombre y cantidad.
+	 * 
+	 * @param nombre   Nombre del artículo.
+	 * @param cantidad Cantidad del artículo en el almacén.
+	 */
+	public Articulo(String nombre, int cantidad) {
+		if (!nombre.isEmpty()) {
+			this.nombre = nombre;
+		}
+		if (cantidad > 0) {
+			this.cantidad = cantidad;
+		}
+	}
+
+	// Métodos getter y setter
+	public String getNombre() {
+		return nombre;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public double getIVA() {
+		return IVA;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	/**
+	 * Calcula el precio de venta al público (PVP) incluyendo el IVA.
+	 * 
+	 * @return Precio con IVA incluido.
 	 */
 	public double getPVP() {
-
-		double PVP = 0;
-
-		PVP = this.precio + ((this.IVA / 100) * this.precio);
-
-		return PVP;
+		return this.precio + ((this.IVA / 100) * this.precio);
 	}
-	
+
+	/**
+	 * Calcula el precio con descuento aplicado.
+	 * 
+	 * @param descuento Porcentaje de descuento.
+	 * @return Precio con descuento aplicado.
+	 */
 	public double getPVPDescuento(int descuento) {
-		
-		double PVP = 0;
-		
-		PVP = this.getPVP() - (this.getPVP() * (descuento / 100));
-		
-		return PVP;
-	}
-	
-	public String toString() {
-		
-		return ("Nombre: " + this.nombre + ". Precio: " + this.precio + ". IVA: " + this.IVA + ". Restantes: " + this.cantidad + ".");
-		
+		return this.getPVP() - (this.getPVP() * (descuento / 100.0));
 	}
 
+	public String toString() {
+		return ("Nombre: " + this.nombre + ". Precio: " + this.precio + ". IVA: " + this.IVA + ". Restantes: "
+				+ this.cantidad + ".");
+	}
 }
